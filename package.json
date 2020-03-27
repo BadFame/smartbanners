@@ -1,8 +1,8 @@
 {
-  "name": "starwars-express",
+  "name": "smartbanners",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
@@ -12,9 +12,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "proxy": "node proxy",
-    "start": "node server6.js",
-    "watch": "nodemon server6.js"
+    "start": "node app.js",
+    "watch": "nodemon app.js"
   },
   "author": "",
   "license": "ISC"
