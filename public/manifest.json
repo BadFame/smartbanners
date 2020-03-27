@@ -1,0 +1,25 @@
+{
+  "short_name": "Vitas",
+  "name": "VITAS Hospice Referral App for Healthcare Pros",
+  "icons": [
+    {
+      "src": "/192-app-icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/512-app-icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.vitas"
+    }
+  ],
+  "start_url": "./",
+  "display": "minimal-ui"
+}
