@@ -48,20 +48,40 @@ limitations under the License.
 
     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
 
-    <button>Interation</button>
+    <button name="btnAdd" id="btnAd" style="display:none"> Interation</button>
     <a href="/view2.html"> Interaction with a link...</a>
 
     <script> 
-      window.addEventListener('load', function() {
-  
         var outputElement = document.getElementById('output');
-               
+        var btnAdd = document.getElementById('btnAd');
+        let deferredPrompt;
+
         window.addEventListener('beforeinstallprompt', function(e) {
           outputElement.textContent = 'beforeinstallprompt Event fired';
-          alert('HELLO')
-          console.log('The event fired');
+
+          e.preventDefault();
+
+          deferredPrompt = e;
+
+          btnAdd.style.display = 'block';
+
         });
-      });
+        btnAdd.addEventListener('click', (e) => {
+            // hide our user interface that shows our A2HS button
+            btnAdd.style.display = 'none';
+            // Show the prompt
+            deferredPrompt.prompt();
+            // Wait for the user to respond to the prompt
+            deferredPrompt.userChoice
+              .then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                  console.log('User accepted the A2HS prompt');
+                } else {
+                  console.log('User dismissed the A2HS prompt');
+                }
+                deferredPrompt = null;
+              });
+          });
     </script>
   </body>
 </head>
