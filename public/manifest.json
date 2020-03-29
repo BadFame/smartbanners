@@ -21,6 +21,6 @@
       "id": "com.vitas"
     }
   ],
-  "start_url": "./",
+  "start_url": "/",
   "display": "minimal-ui"
 }
